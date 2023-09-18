@@ -21,6 +21,12 @@ chmod +x start_download.sh
 chmod +x start_train.sh
 chmod +x start_all.sh
 
+conda install -c conda-forge aria2
+# This command will install `aria2c` from the `conda-forge` channel, which provides packages not available in the default Conda channels.
+
+aria2c --version
+# If the installation was successful, it should display the version information for `aria2c`.
+
 ./start_all.sh
 
 ./start_train.sh
