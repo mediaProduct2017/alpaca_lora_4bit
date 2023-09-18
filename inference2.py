@@ -69,7 +69,7 @@ print(type(dataset['train']))
 indices_to_reserve = list()
 for i, data_point in enumerate(dataset['train']):
     # print(data_point)
-    if data_point['type'] == 'transfer_exist':
+    if data_point['type'] == 'extract':
         indices_to_reserve.append(i)
 
 dataset_test = dataset['train'][indices_to_reserve]
