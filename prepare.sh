@@ -33,6 +33,10 @@ aria2c --version
 
 ./start_train.sh
 
+./start_infer.sh
+
+./start_retrain.sh
+
 cd /data/proj_ja/ai/data
 
 cp alpaca_data_cleaned_archive.json test/qa_test.json
