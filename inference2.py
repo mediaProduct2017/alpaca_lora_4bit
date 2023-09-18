@@ -18,9 +18,13 @@ lora_path = '/data/proj_ja/alpaca_lora_4bit/alpaca_lora/checkpoint-100'
 # lora_path = '/content/alpaca_lora_4bit/alpaca_lora/alpaca_lora/checkpoint-140'
 
 # model, tokenizer = load_llama_model_4bit_low_ram_and_offload(config_path, model_path, lora_path=lora_path, groupsize=-1, seqlen=2048, max_memory=None, is_v1_model=False, bits=4)
-model, tokenizer = load_llama_model_4bit_low_ram(config_path, model_path, groupsize=-1)
+model, tokenizer = load_llama_model_4bit_low_ram(config_path, model_path, groupsize=128)
+# groupsize=-1
+
 # groupsize=-1，表示权重量化压缩的时候，在函数Autograd4bitQuantLinear中，实际的groupsize使用in_features
 # 在accelerate 0.22.0的版本中，groupsize=-1会报错，groupsize=128没问题
+# groupsize=128推理效果更好，但是要慢一些
+
 model = PeftModel.from_pretrained(model, lora_path, torch_dtype=torch.float32, is_trainable=False)  # True
 
 # Scales to half
