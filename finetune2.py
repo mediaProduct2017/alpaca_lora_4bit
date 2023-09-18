@@ -122,8 +122,8 @@ class CustomCallback(TrainerCallback):
 
     def on_step_end(self, args, state, control, model=None, tokenizer=None, **kwargs):
         # Perform any custom tasks at the end of each training step; 20, 5
-        # if trainer.state.global_step > 1 and (trainer.state.global_step-1) % 20 == 0:
-        if (trainer.state.global_step-1) % 20 == 0:
+        if trainer.state.global_step > 1 and (trainer.state.global_step-1) % 200 == 0:
+        # if (trainer.state.global_step-1) % 20 == 0:  # 20
             print(f"\n\nCustom content at step {trainer.state.global_step-1}\n")
             logger.info("INFO\n")
             logger.warning("WARN\n")
