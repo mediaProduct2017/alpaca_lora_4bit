@@ -38,9 +38,10 @@ for n, m in model.named_modules():
 # Set tokenizer
 tokenizer.pad_token_id = 0
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cuda:1!
 # device = torch.device("auto" if torch.cuda.is_available() else "cpu")
-# device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = model.to(device)
 
 from datasets import load_dataset, Dataset
