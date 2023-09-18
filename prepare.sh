@@ -19,6 +19,8 @@ pip install -r requirements.txt -i https://mirrors.sjtug.sjtu.edu.cn/pypi/web/si
 
 chmod +x start_download.sh
 chmod +x start_train.sh
+chmod +x start_retrain.sh
+chmod +x start_infer.sh
 chmod +x start_all.sh
 
 conda install -c conda-forge aria2
