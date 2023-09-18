@@ -30,3 +30,11 @@ aria2c --version
 ./start_all.sh
 
 ./start_train.sh
+
+cd /data/proj_ja/ai/data
+
+cp alpaca_data_cleaned_archive.json test/qa_test.json
+
+cd /data/proj_ja/ai
+
+unzip llama-7b-4bit.zip

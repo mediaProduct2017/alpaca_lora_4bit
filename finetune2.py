@@ -309,8 +309,9 @@ if not ft_config.skip:
         ddp_find_unused_parameters=False if ft_config.ddp else None,
     )
 
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model = model.to(device)
+    # 画蛇添足，多此一举
+    # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # model = model.to(device)
 
     trainer = transformers.Trainer(
         model=model,
