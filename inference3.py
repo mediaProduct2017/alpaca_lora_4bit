@@ -58,7 +58,8 @@ if torch.cuda.device_count() > 1:
 from datasets import load_dataset, Dataset
 import re
 
-train_data_path = '/data/proj_ja/ai/data/alpaca_data_cleaned_archive.json'
+train_data_path = '/data/proj_ja/ai/data/test/qa_test.json'
+# train_data_path = '/data/proj_ja/ai/data/alpaca_data_cleaned_archive.json'
 
 def generate_prompt(data_point):
     return "{0}\n\n{1}\n{2}\n\n{3}\n{4}\n\n{5}".format(
