@@ -1,3 +1,5 @@
+# 下载数据时，最好把原有的alpaca_data_cleaned_archive.json删掉，否则有可能出错
+
 import os
 
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
