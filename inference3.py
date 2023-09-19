@@ -2,6 +2,7 @@
 
 import time
 import torch
+import json
 
 # from autograd_4bit import load_llama_model_4bit_low_ram_and_offload, Autograd4bitQuantLinear
 # from monkeypatch.peft_tuners_lora_monkey_patch import replace_peft_model_with_int4_lora_model
@@ -252,3 +253,9 @@ for ele in ['primary', 'size', 'transfer']:
 # 原发部位的f1_score1
 f1 = 2*(p1*r1)/(p1+r1)
 print(f1)
+
+answers_path = '/data/proj_ja/ai/data/test/answers_inference.json'
+
+# dump data into a JSON file
+with open(answers_path, 'w', encoding='utf-8') as f:
+    json.dump([predicted_labels, true_labels], f, ensure_ascii=False, indent=4)
