@@ -40,6 +40,7 @@ aria2c --version
 cd /data/proj_ja/ai/data
 
 cp alpaca_data_cleaned_archive.json test/qa_test.json
+cp alpaca_data_cleaned_archive.json train/qa_train.json
 
 cd /data/proj_ja/ai
 
