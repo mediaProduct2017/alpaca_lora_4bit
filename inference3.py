@@ -15,8 +15,8 @@ replace_peft_model_with_int4_lora_model()
 config_path = '/data/proj_ja/ai/llama-7b-4bit/'  # "$LLAMA_DIR"
 model_path = '/data/proj_ja/ai/llama-7b-4bit/llama-7b-4bit-128g.safetensors'  # "$LLAMA_MODEL"  # None
 
-lora_path = '/data/proj_ja/alpaca_lora_4bit/alpaca_lora/checkpoint-1376'
-# 100, 200
+lora_path = '/data/proj_ja/alpaca_lora_4bit/alpaca_lora/checkpoint-1290'
+# 100, 200, 1376
 # lora_path = '/content/alpaca_lora_4bit/alpaca_lora/alpaca_lora/checkpoint-140'
 
 # model, tokenizer = load_llama_model_4bit_low_ram_and_offload(config_path, model_path, lora_path=lora_path, groupsize=-1, seqlen=2048, max_memory=None, is_v1_model=False, bits=4)
